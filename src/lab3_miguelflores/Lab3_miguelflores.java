@@ -21,6 +21,7 @@ public class Lab3_miguelflores {
         equipo eq = new equipo();
         ArrayList<jugador> ListJugador = new ArrayList();//agregar 
         ArrayList<equipo> equipo1 = new ArrayList();//agregar
+        ArrayList<equipo> jugador_final = new ArrayList();//agregar
 
         String opcion = " ";
         while (!opcion.equalsIgnoreCase("d")) {
@@ -70,7 +71,7 @@ public class Lab3_miguelflores {
                             double creatividad;
                             double dominio;
                             double asistencias;
-                            
+
                             creatividad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese nivel de creatividad del jugador: "));
                             dominio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese nivel de dominio del jugador: "));
                             asistencias = Double.parseDouble(JOptionPane.showInputDialog("Ingrese nivel de asistencias del jugador: "));
@@ -85,7 +86,7 @@ public class Lab3_miguelflores {
                             peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese peso del jugador: "));
                             velocidad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese velocidad del jugador: "));
                             ListJugador.add(new defensa(agresividad, altura, peso, velocidad, nombre, apellido, estado, pais, pie, numero, precio, equipo));
-                            
+
                         } else if (creacion.equalsIgnoreCase("portero")) {
                             double juego_aereo;
                             double juego_pies;
@@ -181,7 +182,7 @@ public class Lab3_miguelflores {
 
             if (opcion.equals("b")) {
                 opcion = " ";
-                while (!opcion.equalsIgnoreCase("E")) {
+                while (!opcion.equalsIgnoreCase("e")) {
                     opcion = JOptionPane.showInputDialog("Menu\n"
                             + "a- Agregar Equipo\n"
                             + "b- Listar Equipo\n"
@@ -210,13 +211,13 @@ public class Lab3_miguelflores {
                         }
                         JOptionPane.showMessageDialog(null, p1);
                     }
-                    
+
                     if (opcion.equals("c")) {
                         int p = Integer.parseInt(
                                 JOptionPane.showInputDialog("Posicion de equipo a Eliminar"));
                         equipo1.remove(p);
                     }
-                    
+
                     if (opcion.equals("d")) {
                         int pos = Integer.parseInt(
                                 JOptionPane.showInputDialog("Ingrese la Posicion del Soldado a modificar: "));
@@ -234,28 +235,50 @@ public class Lab3_miguelflores {
                         equipo1.set(pos, j);
                     }
                 }
-            }//// b menu #1 
+            }//// b menu #3
             if (opcion.equals("c")) {
                 String equipo = "";
                 String nombre = "";
                 String apellido = "";
+                double monto_equipo = 0;
                 nombre = (JOptionPane.showInputDialog("Ingrese nombre del jugador"));
-                apellido = (JOptionPane.showInputDialog("Ingrese nombre del jugador"));
-                equipo = (JOptionPane.showInputDialog("Ingrese nombre del equipo"));
-                String p1 = "";
+                apellido = (JOptionPane.showInputDialog("Ingrese apellido del jugador"));
+                equipo = (JOptionPane.showInputDialog("Ingrese nombre del equipo al que lo comprara"));
+                for (equipo t2 : equipo1) {
+                    if (t2.getNombre() == equipo) {
+                        monto_equipo = t2.getPresupuesto();
+                    }
+                }
                 for (jugador t1 : ListJugador) {
-                    if (t1 instanceof jugador) {
-                        if (t1.getNombre() == nombre && t1.getApellido() == apellido) {
-                            ListJugador.remove(t1);
-                            t1.
-                            eq.setLista_colectiva(t1);
+                    if (t1.getPrecio() <= monto_equipo) {
+                        if (t1 instanceof jugador) {
+                            if (t1.getNombre() == nombre && t1.getApellido() == apellido) {
+                                ListJugador.remove(t1);
+                                t1.setEquipo(equipo);
+                                eq.setLista_colectiva(t1);
+                            }
                         }
                     }
                 }
             }
             if (opcion.equals("d")) {
-                
+                String equipo = "";
+                String p1 = "";
+                equipo = (JOptionPane.showInputDialog("Ingrese nombre del equipo de desea ver: "));
+                jugador_final = eq.getLista_colectiva();
+                for (equipo t2 : jugador_final) {
+                    for (Object t1 : jugador_final) {
+                        if (t1 instanceof Object) {
+                            p1 += jugador_final.indexOf(t1) + " " + ((Object) t1) + "\n";
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, p1);
+                }
             }
         }// fin menu #1
     }
 }
+
+
+
+

@@ -65,6 +65,38 @@ public class jugador {
     public String getEquipo() {
         return equipo;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public void setPie(String pie) {
+        this.pie = pie;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
     
 
     @Override
