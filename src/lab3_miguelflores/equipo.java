@@ -5,6 +5,8 @@
  */
 package lab3_miguelflores;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Miguel Flores
@@ -17,6 +19,7 @@ public class equipo {
     protected String ciudad;
     protected double presupuesto;
     protected int cantera;
+    private ArrayList lista_colectiva = new ArrayList();//agregar
 
     public equipo() {
     }
@@ -27,6 +30,14 @@ public class equipo {
         this.ciudad = ciudad;
         this.presupuesto = presupuesto;
         this.cantera = cantera;
+    }
+
+    public ArrayList getLista_colectiva() {
+        return lista_colectiva;
+    }
+
+    public void setLista_colectiva(jugador x) {
+        lista_colectiva.add(x);
     }
 
     public String getNombre() {

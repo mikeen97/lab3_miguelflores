@@ -65,6 +65,7 @@ public class jugador {
     public String getEquipo() {
         return equipo;
     }
+    
 
     @Override
     public String toString() {
