@@ -19,7 +19,7 @@ public class equipo {
     protected String ciudad;
     protected double presupuesto;
     protected int cantera;
-    private ArrayList lista_colectiva = new ArrayList();//agregar
+    private ArrayList<jugador> lista_colectiva = new ArrayList();//agregar
 
     public equipo() {
     }
@@ -32,7 +32,7 @@ public class equipo {
         this.cantera = cantera;
     }
 
-    public ArrayList getLista_colectiva() {
+    public ArrayList<jugador> getLista_colectiva() {
         return lista_colectiva;
     }
 

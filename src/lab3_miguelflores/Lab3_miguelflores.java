@@ -266,19 +266,15 @@ public class Lab3_miguelflores {
                 String p1 = "";
                 equipo = (JOptionPane.showInputDialog("Ingrese nombre del equipo de desea ver: "));
                 jugador_final = eq.getLista_colectiva();
-                for (equipo t2 : jugador_final) {
-                    for (Object t1 : jugador_final) {
-                        if (t1 instanceof Object) {
-                            p1 += jugador_final.indexOf(t1) + " " + ((Object) t1) + "\n";
-                        }
+                
+                
+                for (int i = 0; i < jugador_final.size(); i++) {
+                    for (int j = 0; j < 10; j++) {
+                        
                     }
-                    JOptionPane.showMessageDialog(null, p1);
                 }
             }
         }// fin menu #1
     }
 }
-
-
-
 
